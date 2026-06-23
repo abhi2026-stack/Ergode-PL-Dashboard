@@ -23,12 +23,120 @@
         }
         h1 { color: #1F4E78; font-size: 26px; margin-bottom: 8px; }
         .subtitle { color: #666; font-size: 13px; }
+
+        /* SETUP GUIDE */
+        .setup-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #2196F3;
+        }
+        .setup-title { font-size: 18px; font-weight: bold; color: #1F4E78; margin-bottom: 15px; }
+        .setup-step {
+            background: #F5F5F5;
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            font-size: 13px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        .step-num {
+            background: #1F4E78;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+        .step-text { flex: 1; }
+        .step-text strong { color: #1F4E78; }
+        .step-text code {
+            background: #E3F2FD;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 12px;
+            color: #1565C0;
+        }
+
+        /* UPLOAD SECTION */
+        .upload-box {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .upload-title { font-size: 16px; font-weight: bold; color: #1F4E78; margin-bottom: 15px; }
+        .upload-area {
+            border: 3px dashed #90CAF9;
+            border-radius: 12px;
+            padding: 40px 20px;
+            background: #F3F9FF;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 15px;
+        }
+        .upload-area:hover { border-color: #1F4E78; background: #E3F2FD; }
+        .upload-area.dragover { border-color: #4CAF50; background: #E8F5E9; }
+        .upload-icon { font-size: 48px; margin-bottom: 10px; }
+        .upload-text { color: #666; font-size: 14px; }
+        .upload-btn {
+            background: #1F4E78;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .upload-btn:hover { background: #163a5e; }
+        #fileInput { display: none; }
+        .or-divider { color: #999; margin: 15px 0; font-size: 13px; }
+
+        /* PASTE SECTION */
+        .paste-area {
+            width: 100%;
+            height: 120px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 12px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+        .paste-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* FILTER TABS */
         .filter-section {
             background: white;
             border-radius: 12px;
             padding: 15px 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: none;
         }
         .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; }
         .filter-tab {
@@ -42,7 +150,26 @@
             transition: all 0.2s;
         }
         .filter-tab.active { background: #1F4E78; border-color: #1F4E78; color: white; }
-        .filter-tab:hover { border-color: #1F4E78; }
+
+        /* STATS */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-bottom: 20px;
+            display: none;
+        }
+        .stat {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            border-left: 4px solid #1F4E78;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        .stat-label { font-size: 11px; color: #999; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+        .stat-value { font-size: 22px; font-weight: bold; color: #1F4E78; }
+
+        /* ASIN CARDS */
         .asin-card {
             background: white;
             border-radius: 12px;
@@ -91,12 +218,12 @@
             border-top: 3px solid #1F4E78;
         }
         .funnel-box.bad { border-top-color: #C62828; }
-        .funnel-box.good { border-top-color: #4CAF50; }
+        .funnel-box.ok { border-top-color: #4CAF50; }
         .funnel-label { font-size: 10px; color: #999; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
         .funnel-value { font-size: 16px; font-weight: bold; color: #1F4E78; }
-        .funnel-change { font-size: 10px; margin-top: 3px; }
-        .funnel-change.up { color: #4CAF50; }
-        .funnel-change.down { color: #C62828; }
+        .funnel-sub { font-size: 10px; margin-top: 3px; }
+        .up { color: #4CAF50; }
+        .down { color: #C62828; }
         .metrics {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -141,46 +268,19 @@
             font-size: 12px;
             border-left: 3px solid #4CAF50;
         }
-        .action-row:last-child { margin-bottom: 0; }
         .action-type { font-weight: 600; color: #1B5E20; }
         .action-desc { color: #333; margin: 2px 0; }
         .action-time { font-size: 10px; color: #999; }
-        .loading { text-align: center; padding: 60px 20px; }
-        .spinner {
-            width: 40px; height: 40px;
-            border: 4px solid #f0f0f0;
-            border-top-color: #1F4E78;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin: 0 auto 15px;
-        }
-        @keyframes spin { to { transform: rotate(360deg); } }
-        .error-box {
-            background: #FFEBEE;
-            border: 1px solid #EF9A9A;
+        .success-bar {
+            background: #E8F5E9;
+            border: 1px solid #A5D6A7;
             border-radius: 8px;
-            padding: 20px;
-            color: #C62828;
-            text-align: center;
-        }
-        .stats-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
+            padding: 15px 20px;
             margin-bottom: 20px;
-        }
-        .stat {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            border-left: 4px solid #1F4E78;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-        }
-        .stat-label { font-size: 11px; color: #999; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
-        .stat-value { font-size: 22px; font-weight: bold; color: #1F4E78; }
-        @media(max-width:768px) {
-            .funnel { grid-template-columns: repeat(2,1fr); }
-            .metrics { grid-template-columns: repeat(2,1fr); }
+            font-size: 13px;
+            color: #1B5E20;
+            font-weight: 500;
+            display: none;
         }
     </style>
 </head>
@@ -188,29 +288,63 @@
 <div class="container">
     <header>
         <h1>📊 Ergode PL - Complete ASIN Diagnostics</h1>
-        <p class="subtitle">Full funnel: Impressions → Clicks → CVR → Sales → ROAS | Last updated: <span id="lastUpdate">Loading...</span></p>
+        <p class="subtitle">Full funnel: Impressions → Clicks → CVR → Sales → ROAS | <span id="lastUpdate">Upload your data to begin</span></p>
     </header>
 
-    <div class="stats-bar" id="statsBar"></div>
-
-    <div class="filter-section">
-        <div class="filter-tabs" id="filterTabs"></div>
-    </div>
-
-    <div id="dashboard">
-        <div class="loading">
-            <div class="spinner"></div>
-            <p style="color:#999;">Loading ASIN data from Google Sheet...</p>
+    <!-- HOW TO USE -->
+    <div class="setup-box" id="setupBox">
+        <div class="setup-title">🚀 How to Load Your Data (One-Time Setup)</div>
+        <div class="setup-step">
+            <div class="step-num">1</div>
+            <div class="step-text">
+                Open your Google Sheet: <strong>Ergode PL Amazon Ads Data</strong>
+            </div>
+        </div>
+        <div class="setup-step">
+            <div class="step-num">2</div>
+            <div class="step-text">
+                Click <strong>File</strong> → <strong>Download</strong> → <strong>Comma Separated Values (.csv)</strong>
+            </div>
+        </div>
+        <div class="setup-step">
+            <div class="step-num">3</div>
+            <div class="step-text">
+                Click <strong>"Choose CSV File"</strong> below and select the downloaded file — dashboard loads instantly!
+            </div>
+        </div>
+        <div class="setup-step">
+            <div class="step-num">4</div>
+            <div class="step-text">
+                <strong>Every week:</strong> Download new CSV from your updated sheet → Upload here → See latest data
+            </div>
         </div>
     </div>
+
+    <!-- UPLOAD BOX -->
+    <div class="upload-box" id="uploadBox">
+        <div class="upload-title">📂 Upload Your CSV File</div>
+        <div class="upload-area" id="dropZone" onclick="document.getElementById('fileInput').click()">
+            <div class="upload-icon">📊</div>
+            <div class="upload-text">
+                <strong>Click here to select your CSV file</strong><br>
+                or drag and drop it here
+            </div>
+        </div>
+        <input type="file" id="fileInput" accept=".csv" onchange="handleFile(this.files[0])">
+        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+            📂 Choose CSV File
+        </button>
+    </div>
+
+    <div class="success-bar" id="successBar"></div>
+    <div class="stats-bar" id="statsBar"></div>
+    <div class="filter-section" id="filterSection">
+        <div class="filter-tabs" id="filterTabs"></div>
+    </div>
+    <div id="dashboard"></div>
 </div>
 
 <script>
-// =============================================
-// YOUR SHEET ID - Already configured!
-const SHEET_ID = '136LrHZsonlBQqMTsmvFxupFSZsggOUqkp5FRJdDtrGA';
-// =============================================
-
 const COLS = {
     ASIN:0, CATEGORY:2,
     COMPARE_SALES:3, BASE_SALES:5, SALES_CHANGE:7,
@@ -233,59 +367,29 @@ const COLS = {
 let allASINs = [];
 let currentFilter = 'all';
 
-async function init() {
-    try {
-        // Try multiple URL formats to handle CORS
-        const urls = [
-            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&id=${SHEET_ID}`,
-            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv`,
-            `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv`
-        ];
+// Drag and drop
+const dropZone = document.getElementById('dropZone');
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('dragover'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    handleFile(e.dataTransfer.files[0]);
+});
 
-        let csv = null;
-        let lastError = null;
-
-        for (const url of urls) {
-            try {
-                const res = await fetch(url, { mode: 'cors' });
-                if (res.ok) {
-                    csv = await res.text();
-                    if (csv && csv.length > 100) break;
-                }
-            } catch(e) {
-                lastError = e;
-                continue;
-            }
-        }
-
-        if (!csv || csv.length < 100) {
-            throw new Error('Could not load sheet data. Make sure your Google Sheet is published to the web (File → Share → Publish to web → Publish)');
-        }
-
-        parseCSV(csv);
-        analyzeAll();
-        renderStats();
-        renderTabs();
-        applyFilter('all');
-        document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
-
-    } catch(err) {
-        document.getElementById('dashboard').innerHTML = `
-            <div class="error-box">
-                <h3>⚠️ Cannot Load Data</h3>
-                <p style="margin:10px 0;">${err.message}</p>
-                <hr style="margin:15px 0; border-color:#EF9A9A;">
-                <p style="font-size:13px;"><strong>To fix this:</strong></p>
-                <ol style="text-align:left;display:inline-block;margin-top:10px;font-size:13px;line-height:2;">
-                    <li>Open your Google Sheet</li>
-                    <li>Click <strong>File</strong> → <strong>Share</strong></li>
-                    <li>Click <strong>"Publish to the web"</strong></li>
-                    <li>Click <strong>"Publish"</strong> button</li>
-                    <li>Click <strong>OK</strong></li>
-                    <li>Come back here and refresh (Ctrl+Shift+R)</li>
-                </ol>
-            </div>`;
+function handleFile(file) {
+    if (!file) return;
+    if (!file.name.endsWith('.csv')) {
+        alert('Please select a CSV file!');
+        return;
     }
+    const reader = new FileReader();
+    reader.onload = e => {
+        parseCSV(e.target.result);
+        analyzeAll();
+        showDashboard(file.name);
+    };
+    reader.readAsText(file);
 }
 
 function parseCSV(csv) {
@@ -293,10 +397,8 @@ function parseCSV(csv) {
     allASINs = [];
     lines.forEach((line, idx) => {
         if (idx === 0 || !line.trim()) return;
-        // Handle quoted CSV properly
         const cells = parseCSVLine(line);
         if (!cells[COLS.ASIN] || cells[COLS.ASIN].length < 5) return;
-
         allASINs.push({
             asin: cells[COLS.ASIN],
             category: cells[COLS.CATEGORY] || 'Unknown',
@@ -316,8 +418,6 @@ function parseCSV(csv) {
             baseAdClicks: num(cells[COLS.BASE_AD_CLICKS]),
             adClicksChange: num(cells[COLS.AD_CLICKS_CHANGE]),
             comparePageViews: num(cells[COLS.COMPARE_PAGE_VIEWS]),
-            basePageViews: num(cells[COLS.BASE_PAGE_VIEWS]),
-            pageViewsChange: num(cells[COLS.PAGE_VIEWS_CHANGE]),
             compareCPC: num(cells[COLS.COMPARE_CPC]),
             baseCPC: num(cells[COLS.BASE_CPC]),
             compareROAS: num(cells[COLS.COMPARE_ROAS]),
@@ -334,9 +434,7 @@ function parseCSV(csv) {
             compareCVR: num(cells[COLS.COMPARE_CVR]),
             baseCVR: num(cells[COLS.BASE_CVR]),
             compareRatings: num(cells[COLS.COMPARE_RATINGS]),
-            baseRatings: num(cells[COLS.BASE_RATINGS]),
             compareReviews: num(cells[COLS.COMPARE_REVIEWS]),
-            baseReviews: num(cells[COLS.BASE_REVIEWS]),
             compareSessions: num(cells[COLS.COMPARE_SESSIONS]),
             baseSessions: num(cells[COLS.BASE_SESSIONS])
         });
@@ -348,9 +446,9 @@ function parseCSVLine(line) {
     let current = '';
     let inQuotes = false;
     for (let i = 0; i < line.length; i++) {
-        if (line[i] === '"') { inQuotes = !inQuotes; }
+        if (line[i] === '"') inQuotes = !inQuotes;
         else if (line[i] === ',' && !inQuotes) { result.push(current.trim()); current = ''; }
-        else { current += line[i]; }
+        else current += line[i];
     }
     result.push(current.trim());
     return result;
@@ -362,8 +460,8 @@ function analyzeAll() {
     allASINs.forEach(a => {
         a.ctr = a.compareImpressions > 0 ? (a.compareAdClicks / a.compareImpressions * 100) : 0;
         a.adCVR = a.compareAdClicks > 0 ? (a.compareOrders / a.compareAdClicks * 100) : 0;
-
         a.issues = [];
+
         if (a.impressionsChange < -30) a.issues.push('📉 Impressions Down 30%+ → Increase bids, check budget');
         if (a.ctr < 0.3 && a.compareImpressions > 100) a.issues.push('📊 Low CTR (<0.3%) → Improve ad copy, check pricing');
         if (a.adCVR < 1 && a.compareAdClicks > 10) a.issues.push('🎯 Low Ad CVR (<1%) → Wrong targeting or audience');
@@ -388,8 +486,8 @@ function analyzeAll() {
     });
 
     allASINs.sort((a,b) => {
-        const order = {critical:0, warning:1, good:2};
-        return order[a.severity] - order[b.severity];
+        const o = {critical:0, warning:1, good:2};
+        return o[a.severity] - o[b.severity];
     });
 }
 
@@ -400,7 +498,7 @@ function getActions(a) {
     if (a.impressionsChange < -30)
         acts.push({type:'📈 VISIBILITY', desc:'Raise bids on core keywords, check daily budget cap', time:'Immediate'});
     if (a.ctr < 0.3 && a.compareImpressions > 100)
-        acts.push({type:'✏️ AD COPY', desc:'Rewrite headlines, highlight key benefits, test new images', time:'3 days'});
+        acts.push({type:'✏️ AD COPY', desc:'Rewrite headlines, highlight key benefits', time:'3 days'});
     if (a.adCVR < 1 && a.compareAdClicks > 10)
         acts.push({type:'🎯 TARGETING', desc:'Review keyword match types, remove irrelevant terms', time:'5 days'});
     if (a.compareCVR < a.baseCVR * 0.8 && a.baseCVR > 0)
@@ -411,36 +509,48 @@ function getActions(a) {
         acts.push({type:'📦 BUY BOX', desc:'Match lowest FBA price, check inventory levels', time:'Immediate'});
     if (a.salesChange < -30 && a.baseSales > 50)
         acts.push({type:'🔍 INVESTIGATE', desc:'Check competitor activity, review recent reviews, verify ranking', time:'Urgent'});
-    if (acts.length === 0)
+    if (!acts.length)
         acts.push({type:'✅ MONITOR', desc:'All metrics healthy - maintain current strategy', time:'Weekly'});
     return acts;
 }
 
-function renderStats() {
-    const total = allASINs.length;
+function showDashboard(filename) {
+    document.getElementById('setupBox').style.display = 'none';
+    document.getElementById('uploadBox').style.display = 'none';
+
+    const sb = document.getElementById('successBar');
+    sb.style.display = 'block';
+    sb.innerHTML = `✅ Loaded <strong>${allASINs.length} ASINs</strong> from <strong>${filename}</strong> | ${new Date().toLocaleString()}`;
+
+    document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+
+    const statsBar = document.getElementById('statsBar');
+    statsBar.style.display = 'grid';
     const critical = allASINs.filter(a => a.severity === 'critical').length;
     const scale = allASINs.filter(a => a.class === 'hero').length;
     const fix = allASINs.filter(a => a.class === 'fix').length;
     const park = allASINs.filter(a => a.class === 'park').length;
-
-    document.getElementById('statsBar').innerHTML = `
-        <div class="stat"><div class="stat-label">Total ASINs</div><div class="stat-value">${total}</div></div>
+    statsBar.innerHTML = `
+        <div class="stat"><div class="stat-label">Total ASINs</div><div class="stat-value">${allASINs.length}</div></div>
         <div class="stat" style="border-left-color:#C62828"><div class="stat-label">Critical Issues</div><div class="stat-value" style="color:#C62828">${critical}</div></div>
         <div class="stat" style="border-left-color:#4CAF50"><div class="stat-label">Ready to Scale</div><div class="stat-value" style="color:#4CAF50">${scale}</div></div>
         <div class="stat" style="border-left-color:#FF9800"><div class="stat-label">Need Fixing</div><div class="stat-value" style="color:#FF9800">${fix}</div></div>
         <div class="stat" style="border-left-color:#9E9E9E"><div class="stat-label">Consider Parking</div><div class="stat-value" style="color:#9E9E9E">${park}</div></div>
     `;
+
+    document.getElementById('filterSection').style.display = 'block';
+    applyFilter('all');
 }
 
 function renderTabs() {
     const tabs = [
-        {id:'all', label:'📋 All ASINs'},
-        {id:'critical', label:'🔴 Critical'},
-        {id:'hero', label:'⭐ Scale'},
-        {id:'grow', label:'📈 Grow'},
-        {id:'optimize', label:'🎯 Optimize'},
-        {id:'fix', label:'🔧 Fix'},
-        {id:'park', label:'🛑 Park'}
+        {id:'all',label:'📋 All'},
+        {id:'critical',label:'🔴 Critical'},
+        {id:'hero',label:'⭐ Scale'},
+        {id:'grow',label:'📈 Grow'},
+        {id:'optimize',label:'🎯 Optimize'},
+        {id:'fix',label:'🔧 Fix'},
+        {id:'park',label:'🛑 Park'}
     ];
     document.getElementById('filterTabs').innerHTML = tabs.map(t =>
         `<div class="filter-tab ${t.id===currentFilter?'active':''}" onclick="applyFilter('${t.id}')">${t.label}</div>`
@@ -458,7 +568,7 @@ function applyFilter(type) {
 
 function renderCards(list) {
     if (!list.length) {
-        document.getElementById('dashboard').innerHTML = '<div class="loading"><p style="color:#999">No ASINs found for this filter</p></div>';
+        document.getElementById('dashboard').innerHTML = '<div style="text-align:center;padding:40px;color:#999">No ASINs found for this filter</div>';
         return;
     }
     document.getElementById('dashboard').innerHTML = list.map(a => `
@@ -473,47 +583,38 @@ function renderCards(list) {
                     <span class="badge badge-${a.class}">${classLabel(a.class)}</span>
                 </div>
             </div>
-
             ${a.issues.length ? `
             <div class="issues">
                 <strong>⚠️ ${a.issues.length} Issue${a.issues.length>1?'s':''} Detected:</strong>
                 <ul>${a.issues.map(i=>`<li>${i}</li>`).join('')}</ul>
             </div>` : ''}
-
             <div class="funnel">
-                <div class="funnel-box ${a.impressionsChange < -20 ? 'bad' : 'good'}">
+                <div class="funnel-box ${a.impressionsChange<-20?'bad':'ok'}">
                     <div class="funnel-label">Impressions</div>
                     <div class="funnel-value">${fmt(a.compareImpressions)}</div>
-                    <div class="funnel-change ${a.impressionsChange>=0?'up':'down'}">
-                        ${a.impressionsChange>=0?'↑':'↓'} ${Math.abs(a.impressionsChange).toFixed(1)}%
-                    </div>
+                    <div class="funnel-sub ${a.impressionsChange>=0?'up':'down'}">${a.impressionsChange>=0?'↑':'↓'} ${Math.abs(a.impressionsChange).toFixed(1)}%</div>
                 </div>
-                <div class="funnel-box ${a.ctr < 0.3 ? 'bad' : 'good'}">
+                <div class="funnel-box ${a.ctr<0.3?'bad':'ok'}">
                     <div class="funnel-label">CTR</div>
                     <div class="funnel-value">${a.ctr.toFixed(2)}%</div>
-                    <div class="funnel-change" style="color:#999">Clicks: ${fmt(a.compareAdClicks)}</div>
+                    <div class="funnel-sub" style="color:#999">Clicks: ${fmt(a.compareAdClicks)}</div>
                 </div>
-                <div class="funnel-box ${a.adCVR < 1 ? 'bad' : 'good'}">
+                <div class="funnel-box ${a.adCVR<1?'bad':'ok'}">
                     <div class="funnel-label">Ad CVR</div>
                     <div class="funnel-value">${a.adCVR.toFixed(2)}%</div>
-                    <div class="funnel-change" style="color:#999">Orders: ${a.compareOrders}</div>
+                    <div class="funnel-sub" style="color:#999">Orders: ${a.compareOrders}</div>
                 </div>
-                <div class="funnel-box ${a.compareCVR < a.baseCVR*0.8 ? 'bad' : 'good'}">
+                <div class="funnel-box ${a.compareCVR<a.baseCVR*0.8?'bad':'ok'}">
                     <div class="funnel-label">PDP CVR</div>
                     <div class="funnel-value">${a.compareCVR.toFixed(2)}%</div>
-                    <div class="funnel-change ${a.compareCVR >= a.baseCVR ? 'up' : 'down'}">
-                        vs ${a.baseCVR.toFixed(2)}%
-                    </div>
+                    <div class="funnel-sub ${a.compareCVR>=a.baseCVR?'up':'down'}">vs ${a.baseCVR.toFixed(2)}%</div>
                 </div>
             </div>
-
             <div class="metrics">
                 <div class="metric ${a.salesChange>=0?'green':'red'}">
                     <div class="metric-label">Sales</div>
                     <div class="metric-value">$${a.compareSales.toFixed(0)}</div>
-                    <div class="metric-sub ${a.salesChange>=0?'':''}">
-                        ${a.salesChange>=0?'↑':'↓'} ${Math.abs(a.salesChange).toFixed(1)}% WoW
-                    </div>
+                    <div class="metric-sub">${a.salesChange>=0?'↑':'↓'} ${Math.abs(a.salesChange).toFixed(1)}% WoW</div>
                 </div>
                 <div class="metric ${a.compareROAS<2?'red':a.compareROAS>4?'green':'blue'}">
                     <div class="metric-label">ROAS</div>
@@ -551,14 +652,13 @@ function renderCards(list) {
                     <div class="metric-sub">${a.compareRatings.toFixed(1)} ⭐</div>
                 </div>
             </div>
-
             <div class="actions">
                 <div class="actions-title">🎯 Action Plan</div>
-                ${a.actions.map(act => `
+                ${a.actions.map(act=>`
                 <div class="action-row">
                     <div class="action-type">${act.type}</div>
                     <div class="action-desc">${act.desc}</div>
-                    <div class="action-time">⏱️ Timeline: ${act.time}</div>
+                    <div class="action-time">⏱️ ${act.time}</div>
                 </div>`).join('')}
             </div>
         </div>
@@ -566,14 +666,12 @@ function renderCards(list) {
 }
 
 function classLabel(c) {
-    return {hero:'⭐ Hero',grow:'📈 Grow',optimize:'🎯 Optimize',fix:'🔧 Fix',park:'🛑 Park'}[c] || c;
+    return {hero:'⭐ Hero',grow:'📈 Grow',optimize:'🎯 Optimize',fix:'🔧 Fix',park:'🛑 Park'}[c]||c;
 }
 
 function fmt(n) {
     return n >= 1000 ? (n/1000).toFixed(1)+'K' : Math.round(n).toString();
 }
-
-window.addEventListener('load', init);
 </script>
 </body>
 </html>
